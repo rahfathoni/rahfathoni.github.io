@@ -4,7 +4,7 @@ const scissors = document.getElementById('scissors');
 const score = document.getElementById('score');
 const round = document.getElementById('round');
 const restart = document.getElementById('restart');
-const resultText = document.querySelector('.resultText');
+const resultText = document.getElementsByClassName('resultText')[0];
 const papanScore = {
     you: 0,
     computer: 0
