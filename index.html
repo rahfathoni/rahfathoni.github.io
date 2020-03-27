@@ -3,15 +3,46 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Rock Paper Scissors Game</title>
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <link href="result.css" rel="stylesheet" type="text/css">
 </head>
 
-
-
 <body>
-    
+    <header> 
+        <h1>ROCK! PAPER! SCISSORS!</h1>
+    </header>
+    <section>
+        <div id='openingWord'>
+            <!-- <h2>Get 3 wins to win this game</h2> -->
+            <h2>Choose one</h2>
+        </div>
+        <div class='clickButtons'>
+            <button id="rock" class = 'clickButton ImgRock'>
+                <img id="rock" src='img/rock.jpg'>
+            </button>
+            <button id="paper" class = 'clickButton ImgPaper'>
+                <img id="paper" src='img/paper.jpg'>
+            </button>
+            <button id="scissors" class = 'clickButton ImgScissors'>
+                <img id="scissors" src='img/scissors.jpg'>
+            </button>
+        </div>
+        <div id='score'>
+            <h3>You : 0</h3>
+            <h3>Computer : 0</h3>
+        </div>
+        <button id='restart'><h4>Restart Game</h4></button>
+    </section>
 
+    <div class='resultText'>
+        <div id='round' class ="resultText-round"></div>
+        <!-- <div id='final'>
+            <h5>YOU'RE THE WINNER!!</h5>
+        </div> -->
+    </div>
 
-
+    <script src='script.js'></script>
 </body>
 </html>
+
