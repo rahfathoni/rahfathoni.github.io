@@ -52,61 +52,70 @@ function whoWin(you, computer){
     return result;
 }
 
+//bagian page alert hasil menang-kalah
 function scorePage(win, computer){
     if(papanScore.you == 2 && win == 'you'){
-        round.innerHTML = `<h5>WOW!!!</h5> 
-        <h5>YOU ARE THE WINNER!!</h5>
-        <p>Computer last choose :</p>
-        <img src='img/${computer}.jpg'>`
+        round.innerHTML = 
+            `<h5>WOW!!!</h5> 
+            <h5>YOU ARE THE WINNER!!</h5>
+            <p>Computer last choose :</p>
+            <img src='img/${computer}.jpg'>`
         round.style.background = 'rgb(83, 180, 83)';
         gameRestart();
     } else if(papanScore.computer == 2 && win == 'computer'){
-        round.innerHTML = `<h5>HAHAHAHA</h5> 
-        <h5>YOU LOSEE</h5>
-        <p>Computer last choose :</p>
-        <img src='img/${computer}.jpg'>`
+        round.innerHTML = 
+            `<h5>HAHAHAHA</h5> 
+            <h5>YOU LOSEE</h5>
+            <p>Computer last choose :</p>
+            <img src='img/${computer}.jpg'>`
         round.style.background = 'rgb(195, 68, 68)';
         gameRestart();
     } else {     
         if(win == 'you'){
-            round.innerHTML = `  <h4>WIN</h4>
-            <p>Computer choose :</p>
-            <img src='img/${computer}.jpg'>`
+            round.innerHTML = 
+                `<h4>WIN</h4>
+                <p>Computer choose :</p>
+                <img src='img/${computer}.jpg'>`
             papanScore.you++;
         }
         else if(win == 'computer'){
-            round.innerHTML = `  <h4>LOSE</h4>
-            <p>Computer choose :</p>
-            <img src='img/${computer}.jpg'>`
+            round.innerHTML =  
+                `<h4>LOSE</h4>
+                <p>Computer choose :</p>
+                <img src='img/${computer}.jpg'>`
             papanScore.computer++;
         }
         else {
-            round.innerHTML = `  <h4>DRAW</h4>
-            <p>Computer choose :</p>
-            <img src='img/${computer}.jpg'>`
+            round.innerHTML = 
+                `<h4>DRAW</h4>
+                <p>Computer choose :</p>
+                <img src='img/${computer}.jpg'>`
         }
         round.style.background = 'rgb(78, 104, 143)'
-        score.innerHTML = `<h3>You : ${papanScore.you}</h3>
-        <h3>Computer : ${papanScore.computer}</h3>`;
+        score.innerHTML = 
+            `<h3>You : ${papanScore.you}</h3>
+            <h3>Computer : ${papanScore.computer}</h3>`;
     }
     
     resultText.style.display = 'block';
     return;
 }
 
+//balikin display ke none jika di klik background target
 function clear(input){
     if (input.target == resultText){
         resultText.style.display = 'none';
     }
 }
 
+//restart game
 function gameRestart(){
     papanScore.you = 0;
     papanScore.computer = 0;
-    score.innerHTML = `<h3>You : 0</h3>
-    <h3>Computer : 0</h3>`;
+    score.innerHTML = 
+        `<h3>You : 0</h3>
+        <h3>Computer : 0</h3>`;
 }
-
 
 //Event listeners
 rock.addEventListener('click', mainSystem);
