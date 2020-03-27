@@ -1,7 +1,8 @@
-const clickButtons = document.querySelectorAll('.clickButton');
+const rock = document.getElementById('rock');
+const paper = document.getElementById('paper');
+const scissors = document.getElementById('scissors');
 const score = document.getElementById('score');
 const round = document.getElementById('round');
-// const final = document.getElementById('final');
 const restart = document.getElementById('restart');
 const resultText = document.querySelector('.resultText');
 const papanScore = {
@@ -15,6 +16,7 @@ function mainSystem(input){
     const computerPick = randomComputerPick();
     const winner = whoWin(youPick, computerPick);
     scorePage(winner, computerPick);
+    // console.log(youPick, computerPick, winner)
 }
 
 //Random komputer, jika 0-batu, 1-paper, 2-scissors
@@ -51,25 +53,39 @@ function whoWin(you, computer){
 }
 
 function scorePage(win, computer){
-    if(win == 'you'){
-        round.innerHTML = `  <h4>WIN</h4>
-        <p>Computer choose :</p>
+    if(papanScore.you == 2 && win == 'you'){
+        round.innerHTML = `<h5>WOW!!!</h5> 
+        <h5>YOU ARE THE WINNER!!</h5>
+        <p>Computer last choose :</p>
         <img src='img/${computer}.jpg'>`
-        papanScore.you++;
-    }
-    else if(win == 'computer'){
-        round.innerHTML = `  <h4>LOSE</h4>
-        <p>Computer choose :</p>
+        gameRestart();
+    } else if(papanScore.computer == 2 && win == 'computer'){
+        round.innerHTML = `<h5>HAHAHAHA</h5> 
+        <h5>YOU LOSEE</h5>
+        <p>Computer last choose :</p>
         <img src='img/${computer}.jpg'>`
-        papanScore.computer++;
+        gameRestart();
+    } else {     
+        if(win == 'you'){
+            round.innerHTML = `  <h4>WIN</h4>
+            <p>Computer choose :</p>
+            <img src='img/${computer}.jpg'>`
+            papanScore.you++;
+        }
+        else if(win == 'computer'){
+            round.innerHTML = `  <h4>LOSE</h4>
+            <p>Computer choose :</p>
+            <img src='img/${computer}.jpg'>`
+            papanScore.computer++;
+        }
+        else {
+            round.innerHTML = `  <h4>DRAW</h4>
+            <p>Computer choose :</p>
+            <img src='img/${computer}.jpg'>`
+        }
+        score.innerHTML = `<h3>You : ${papanScore.you}</h3>
+        <h3>Computer : ${papanScore.computer}</h3>`;
     }
-    else {
-        round.innerHTML = `  <h4>DRAW</h4>
-        <p>Computer choose :</p>
-        <img src='img/${computer}.jpg'>`
-    }
-    score.innerHTML = `<h3>You : ${papanScore.you}</h3>
-    <h3>Computer : ${papanScore.computer}</h3>`;
     
     resultText.style.display = 'block';
     return;
@@ -90,8 +106,8 @@ function gameRestart(){
 
 
 //Event listeners
-clickButtons.forEach(clickButtons => {
-    clickButtons.addEventListener('click',mainSystem)
-});
+rock.addEventListener('click', mainSystem);
+paper.addEventListener('click', mainSystem);
+scissors.addEventListener('click', mainSystem);
 window.addEventListener('click',clear);
 restart.addEventListener('click', gameRestart);

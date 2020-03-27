@@ -104,8 +104,14 @@ h4{
 #round h4{
     font-family: sans-serif;
     font-weight: 400px;
-    font-size: 30px;
-    margin-bottom: 1px;
+    font-size: 25px;
+    margin-bottom: 0.5px;
+}
+#round h5{
+    font-family: sans-serif;
+    font-weight: 600px;
+    font-size: 35px;
+    margin: 5px
 }
 #round p{
     font-family: sans-serif;
@@ -134,3 +140,5 @@ h4{
         opacity: 1;
     }
 }
+
+
