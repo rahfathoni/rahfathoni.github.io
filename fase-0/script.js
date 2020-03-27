@@ -58,12 +58,14 @@ function scorePage(win, computer){
         <h5>YOU ARE THE WINNER!!</h5>
         <p>Computer last choose :</p>
         <img src='img/${computer}.jpg'>`
+        round.style.background = 'rgb(83, 180, 83)';
         gameRestart();
     } else if(papanScore.computer == 2 && win == 'computer'){
         round.innerHTML = `<h5>HAHAHAHA</h5> 
         <h5>YOU LOSEE</h5>
         <p>Computer last choose :</p>
         <img src='img/${computer}.jpg'>`
+        round.style.background = 'rgb(195, 68, 68)';
         gameRestart();
     } else {     
         if(win == 'you'){
@@ -83,6 +85,7 @@ function scorePage(win, computer){
             <p>Computer choose :</p>
             <img src='img/${computer}.jpg'>`
         }
+        round.style.background = 'rgb(78, 104, 143)'
         score.innerHTML = `<h3>You : ${papanScore.you}</h3>
         <h3>Computer : ${papanScore.computer}</h3>`;
     }
